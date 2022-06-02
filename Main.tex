@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2.5cm, right=4cm, top=5.00cm, bottom=2.50cm]{geometry}
+\usepackage{eso-pic}
+\usepackage{url}
+\usepackage{microtype}
+\setlength{\parindent}{0cm}
+\usepackage{xhfill}
+\usepackage{anysize}
+\usepackage{apacite}
+\usepackage{titletoc}
+\usepackage{sectsty}
+\chapternumberfont{\Large} 
+\chaptertitlefont{\Large}
+\sectionfont{\large}
+\usepackage{setspace}
+\usepackage[document]{ragged2e}
+\usepackage{float}
+\usepackage{booktabs, makecell, tabularx,array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}m{#1}}
+{\renewcommand{\arraystretch}{0.8} % Espacios en blanco de filas en tablas
+% Configuracion de los titulos y pie de tablas y figuras
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+\captionsetup[table]{labelfont=bf,textfont=it}
+\captionsetup[figure]{labelfont=bf,textfont=it}
+\captionsetup{justification   = raggedright,
+	singlelinecheck = false}
+
+\newcommand\blfootnote[1]{%	
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\usepackage[pangram]{blindtext} % Texto random
+
+\begin{document}
+
+	\input{Portada}
+	\newpage
+	\setcounter{page}{1}
+	\renewcommand{\thepage}{\roman{page}}
+	\pagestyle{plain}
+	\input{Contra_p}
+	\newpage
+	\input{Agradecimientos}
+	\newpage
+	\input{Datos}
+	
+	\newpage
+	\spacing{1.5}
+	\renewcommand{\contentsname}{\centering CONTENIDO}
+	\renewcommand{\tablename}{ Cuadro}
+	\renewcommand{\listtablename}{ \centering LISTA DE CUADROS}
+	\renewcommand{\listfigurename}{ \centering LISTA DE FIGURAS}
+	
+	\tableofcontents
+	\listoftables
+	\listoffigures
+	
+	\newpage
+	\input{Resumen_G}
+	\newpage
+	\input{Abstract}
+
+	\newgeometry{left=4.00cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
+	\renewcommand{\thepage}{\arabic{page}}
+	\newpage
+	
+	\input{Intro}
+	\input{Revision}
+	\input{Articulo}
+	\newpage
+	\bibliographystyle{apacite}
+	\bibliography{Bibliografia.bib}
+	
+	
+\end{document}
